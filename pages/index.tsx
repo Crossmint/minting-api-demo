@@ -91,7 +91,6 @@ export default function Home() {
             <Link
               href="https://www.crossmint.com"
               target="_blank"
-              as={'image'}
             >
               By{' '}
               <Image
