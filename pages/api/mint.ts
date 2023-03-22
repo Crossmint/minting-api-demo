@@ -14,7 +14,9 @@ export default async function handler(
     console.log('nftId:', nftId);
     const recipientString = `email:${req.body.email}:polygon`;
 
-    const url = `${process.env.API_URL}/${nftId}`;
+    const url = `${process.env.API_URL}/${process.env.COLLECTION_ID}/nfts/${nftId}`;
+
+    console.log('url: ', url);
 
     const response = await fetch(url, {
       method: 'PUT',

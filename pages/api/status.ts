@@ -11,8 +11,9 @@ export default async function handler(
     console.log('email:', req.query.id);
 
     const nftId = req.query.id;
-    const url = `${process.env.API_URL}/${nftId}`;
-
+    const url = `${process.env.API_URL}/${process.env.COLLECTION_ID}/nfts/${nftId}`;
+    console.log('url: ', url);
+    
     const response = await fetch(url, {
       method: 'GET',
       headers: {
