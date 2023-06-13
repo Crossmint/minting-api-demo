@@ -8,13 +8,13 @@ export default async function handler(
 ) {
 
   try {
-    const nftId = crypto.createHash('sha1').update(req.body.email).digest('hex');
+    const nftName = crypto.createHash('sha1').update(req.body.email).digest('hex');
     console.log('req.body:', req.body);
     console.log('email:', req.body.email);
-    console.log('nftId:', nftId);
+    console.log('nftId:', nftName);
     const recipientString = `email:${req.body.email}:polygon`;
 
-    const url = `${process.env.API_URL}/${process.env.COLLECTION_ID}/nfts/${nftId}`;
+    const url = `${process.env.API_URL}/${process.env.COLLECTION_ID}/nfts/${nftName}`;
 
     console.log('url: ', url);
 
