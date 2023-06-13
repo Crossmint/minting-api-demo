@@ -110,7 +110,7 @@ export default function Home() {
             <div className="flex flex-col w-full">
               <div className={styles.nftDemo}>
                 <Image
-                  src="/nft-image.webp"
+                  src="/zenacademylogo.png"
                   alt="NFT Demo Image"
                   width={512}
                   height={512}
@@ -120,39 +120,8 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col w-full">
-              <h2 className="text-2xl mb-3">🛠 How it Works</h2>
-              <ol className="list-decimal p-5">
-                <li className="pb-3">Enter your email address below</li>
-                <li className="pb-3">Click the mint button</li>
-                <li className="pb-3">Wallet is generated and linked to your email</li>
-                <li className="pb-3">
-                  Login to {' '}
-                  <a href={`https://staging.crossmint.com/user/collection/${tokenPath}`} className="text-green-400" target="_blank">
-                    staging.crossmint.com
-                  </a> 
-                  {' '} with  {' '}
-                  <span className="text-blue-400">{email ? email : 'your email'}</span>
-                </li>
-              </ol>
-              <span className="text-sm text-gray-400 mb-6">This tool will mint to the same email address exactly once.</span>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  mintNFT();
-                }}
-              >
-                <label htmlFor="email" className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Your Email</label>
-                <div className="flex rounded-md shadow-sm">
-                  <span className="px-4 inline-flex items-center min-w-fit rounded-l-md border border-r-0 text-lg bg-gray-700 border-gray-700">
-                    <svg aria-hidden="true" className="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                  </span>
-                  <input type="text" id="email" onChange={event => setEmail(event.target.value)} value={email} className="py-3 px-4 block w-full bg-gray-700 border-l-1 border-l-gray-500 text-white border-gray-700 shadow-sm rounded-0 text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500" placeholder="info@gmail.com" />
-                  <button type="submit" disabled={minting} className="inline-flex flex-shrink-0 px-12 justify-center items-center h-[2.875rem] w-[2.875rem] rounded-r-md border-blue-100 font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">Mint</button>
-                </div>
-
-                
-              </form>
-
+              <h2 className="text-2xl mb-3">Let's get started</h2>  
+              
               <div className="my-10">
                 {txnId ? 
                   <a href={`https://mumbai.polygonscan.com/tx/${txnId}`} target="_blank" className="group block rounded-lg p-6 bg-white ring-1 ring-slate-900/5 shadow-lg space-y-3 hover:bg-purple-700 hover:ring-purple-700">
@@ -182,62 +151,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://staging.crossmint.com/console"
-            className={styles.card}
-            target="_blank"
-          >
-            <h2 className={inter.className}>
-              Signup <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Create your Crossmint developer account and get started.
-            </p>
-          </a>
-
-          <a
-            href="https://docs.crossmint.com/docs/nft-minting-api"
-            className={styles.card}
-            target="_blank"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about our Minting API.
-            </p>
-          </a>
-
-          <a
-            href="https://docs.crossmint.com/reference/mint-nft"
-            className={styles.card}
-            target="_blank"
-          >
-            <h2 className={inter.className}>
-              API Spec <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Explore and test our Minting API right in your browser.
-            </p>
-          </a>
-
-          <a
-            href="https://www.youtube.com/@crossmint"
-            className={styles.card}
-            target="_blank"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Check out our YouTube channel to learn more!
-            </p>
-          </a>
-
-        </div>
+        </div>       
       </main>
     </>
   )
